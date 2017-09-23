@@ -1,95 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context="com.aragones.paul.truck.ui.main.MainActivity">
+    android:orientation="vertical">
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/manufacturerCardView"
+    <RelativeLayout
+        android:id="@+id/rlManufacturer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_corner"
         android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="7dp"
-        card_view:cardMaxElevation="14dp"
-        card_view:cardBackgroundColor="@color/green">
-        <TextView
-            android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_add"/>
+
+        <TextView
+            android:id="@+id/manufacturerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="@string/manufacturer"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"/>
-    </android.support.v7.widget.CardView>
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/modelCardView"
+        <TextView
+            android:id="@+id/chosenManufacturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/manufacturerTitle"
+            android:layout_centerHorizontal="true"
+            android:text="@string/none_selected"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlModel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_corner"
         android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="7dp"
-        card_view:cardMaxElevation="14dp"
-        card_view:cardBackgroundColor="@color/red">
-        <TextView
-            android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_add"/>
+
+        <TextView
+            android:id="@+id/modelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="@string/model"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"/>
-    </android.support.v7.widget.CardView>
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/yearCardView"
+        <TextView
+            android:id="@+id/chosenModel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/modelTitle"
+            android:layout_centerHorizontal="true"
+            android:text="@string/none_selected"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlYear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_corner"
         android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="7dp"
-        card_view:cardMaxElevation="14dp"
-        card_view:cardBackgroundColor="@color/blue">
-        <TextView
-            android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:src="@android:drawable/ic_menu_add"/>
+
+        <TextView
+            android:id="@+id/YearTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:text="@string/year"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"/>
-    </android.support.v7.widget.CardView>
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/summaryCardView"
+        <TextView
+            android:id="@+id/chosenYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/YearTitle"
+            android:layout_centerHorizontal="true"
+            android:text="@string/none_selected"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/rlSummary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:background="@drawable/rounded_corner"
         android:foreground="?android:attr/selectableItemBackground"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="7dp"
-        card_view:cardMaxElevation="14dp"
-        card_view:cardBackgroundColor="@color/yellow">
+        android:orientation="vertical"
+        android:padding="8dp">
+
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/summaryTitle"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:gravity="center"
+            android:layout_centerInParent="true"
             android:text="@string/summary"
-            android:textSize="24sp"
-            android:textColor="@android:color/white"/>
-    </android.support.v7.widget.CardView>
-
-
-
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+    </RelativeLayout>
 
 </LinearLayout>

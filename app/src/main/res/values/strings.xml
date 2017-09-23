@@ -9,4 +9,7 @@
     <string name="model">Model</string>
     <string name="year">Year</string>
     <string name="summary">Summary</string>
+    <string name="option">Option</string>
+    <string name="none_selected">None Selected</string>
+    <string name="load_error">Please fill up all required fields</string>
 </resources>

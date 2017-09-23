@@ -4,5 +4,5 @@ import com.aragones.paul.truck.models.TruckResponse
 import rx.Observable
 
 interface TruckInteractor {
-    fun manufacturers(): Observable<TruckResponse>
+    fun car(manufacturerKey: String = "", modelKey: String = ""): Observable<TruckResponse>
 }

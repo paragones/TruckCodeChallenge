@@ -7,5 +7,6 @@ import rx.Observable
 
 class TruckInteractorImpl(val truckRepository: TruckRepository) : TruckInteractor {
 
-    override fun manufacturers(): Observable<TruckResponse> = truckRepository.manufacturers()
+    override fun car(manufacturerKey: String, modelKey: String): Observable<TruckResponse> =
+            truckRepository.car(manufacturerKey, modelKey)
 }

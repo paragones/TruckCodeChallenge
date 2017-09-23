@@ -1,35 +1,53 @@
 package com.aragones.paul.truck.ui.dialog
 
+import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.SeekBar
+import android.widget.RelativeLayout
 import android.widget.TextView
 import com.aragones.paul.truck.R
+import java.util.ArrayList
 
 
-class DialogAdapter(private val catFacts: List<String>,
-                    private val shareCatFact: (String) -> Unit) : RecyclerView.Adapter<DialogAdapter.ViewHolder>() {
+class DialogAdapter(private val options: List<Pair<String, String>>,
+                    private val chooseOption: (Pair<String, String>) -> Unit) : RecyclerView.Adapter<DialogAdapter.ViewHolder>() {
+    val subList: ArrayList<Pair<String, String>> = ArrayList()
+
+    init {
+        subList.addAll(options)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(LayoutInflater.from(parent.context)
-                .inflate(R.layout.facts_view, parent, false))
+                .inflate(R.layout.list, parent, false))
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val content: TextView = view.findViewById(R.id.cat_fact_content) as TextView
-        val seekBar: SeekBar = view.findViewById(R.id.seek_bar) as SeekBar
-        val shareButton: ImageView = view.findViewById(R.id.share_button) as ImageView
+        val cardView: RelativeLayout = view.findViewById(R.id.cardView) as RelativeLayout
+        val content: TextView = view.findViewById(R.id.optionName) as TextView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.content.text = catFacts[position].content
-        holder.shareButton.setOnClickListener {
-            shareCatFact(holder.content.text.toString())
+        holder.content.text = subList[position].second
+        holder.cardView.setOnClickListener {
+            chooseOption(subList[position])
         }
     }
 
-    override fun getItemCount(): Int = catFacts.size
+    fun filter(charText: String) {
+        subList.clear()
+        if (charText.isEmpty()) {
+            subList.addAll(options)
+        } else {
+            subList.addAll(options.filter {
+                it.second.contains(charText.capitalize(), true)
+            })
+        }
+        notifyDataSetChanged()
+    }
+
+    override fun getItemCount(): Int = subList.size
 }

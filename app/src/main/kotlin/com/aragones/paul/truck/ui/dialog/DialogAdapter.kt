@@ -1,8 +1,7 @@
 package com.aragones.paul.truck.ui.dialog
 
-import android.support.v7.widget.CardView
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -26,13 +25,14 @@ class DialogAdapter(private val options: List<Pair<String, String>>,
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val cardView: RelativeLayout = view.findViewById(R.id.cardView) as RelativeLayout
+        val rlList: RelativeLayout = view.findViewById(R.id.rlList) as RelativeLayout
         val content: TextView = view.findViewById(R.id.optionName) as TextView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        if (position % 2 == 0) holder.rlList.setBackgroundColor(ContextCompat.getColor(holder.content.context, R.color.yellow))
         holder.content.text = subList[position].second
-        holder.cardView.setOnClickListener {
+        holder.rlList.setOnClickListener {
             chooseOption(subList[position])
         }
     }

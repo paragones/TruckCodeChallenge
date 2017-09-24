@@ -59,10 +59,11 @@ class DialogActivity : BaseActivity(), DialogView, SearchView.OnQueryTextListene
     }
 
     private fun setupSearchView() {
-        search.setIconifiedByDefault(true);
-        search.setFocusable(true);
-        search.setIconified(false);
-        search.requestFocusFromTouch();
+        search.isFocusable = false
+        search.isIconified = false
+        search.setIconifiedByDefault(true)
+        search.requestFocusFromTouch()
+        search.clearFocus()
     }
 
     override fun displayCarResponse(data: Map<String, String>) {

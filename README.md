@@ -1,5 +1,5 @@
 # TruckCodeChallenge
-An Android Project for Asana Rebel Code Challenge
+An Android Project for Truck Code Challenge
 
 <img src="/assets/sample.gif" width="49%">
 

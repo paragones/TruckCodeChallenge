@@ -44,25 +44,11 @@ class DialogActivity : BaseActivity(), DialogView, SearchView.OnQueryTextListene
 
     private fun setupView() {
         presenter.attach(this)
-
-        when (type) {
-            RequestType.MANUFACTURER -> {
-                presenter.loadData()
-            }
-            RequestType.MODEL -> {
-                presenter.loadData(car.manufacturerKey)
-            }
-            RequestType.YEAR -> {
-                presenter.loadData(car.manufacturerKey, car.modelKey)
-            }
-            RequestType.SUMMARY -> {
-                displaySummary()
-            }
-        }
+        presenter.setupView(type, car)
         setupSearchView()
     }
 
-    private fun displaySummary() {
+    override fun displaySummary() {
         search.gone()
         recyclerView.gone()
         progress.gone()
@@ -79,7 +65,7 @@ class DialogActivity : BaseActivity(), DialogView, SearchView.OnQueryTextListene
         search.requestFocusFromTouch();
     }
 
-    override fun displayManufacturers(data: Map<String, String>) {
+    override fun displayCarResponse(data: Map<String, String>) {
         adapter = DialogAdapter(data.toList(), { chooseOption(it) })
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter

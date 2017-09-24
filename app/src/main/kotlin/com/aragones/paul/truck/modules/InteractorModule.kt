@@ -1,8 +1,8 @@
 package com.aragones.paul.truck.modules
 
-import com.aragones.paul.truck.interactors.TruckInteractor
-import com.aragones.paul.truck.interactors.TruckInteractorImpl
-import com.aragones.paul.truck.repositories.TruckRepository
+import com.aragones.paul.truck.interactors.CarInteractor
+import com.aragones.paul.truck.interactors.CarInteractorImpl
+import com.aragones.paul.truck.repositories.CarRepository
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -12,6 +12,6 @@ class InteractorModule {
 
     @Provides
     @Singleton
-    fun providesTruckInteractor(repository: TruckRepository): TruckInteractor
-            = TruckInteractorImpl(repository)
+    fun providesTruckInteractor(repository: CarRepository): CarInteractor
+            = CarInteractorImpl(repository)
 }

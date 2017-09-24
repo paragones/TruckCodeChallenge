@@ -1,7 +1,7 @@
 package com.aragones.paul.truck.modules
 
 import com.aragones.paul.truck.BuildConfig
-import com.aragones.paul.truck.rest.TruckRest
+import com.aragones.paul.truck.rest.CarRest
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
@@ -19,7 +19,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideCategoryRest(retrofit: Retrofit): TruckRest = retrofit.create(TruckRest::class.java)
+    fun provideCategoryRest(retrofit: Retrofit): CarRest = retrofit.create(CarRest::class.java)
 
     @Provides
     @Singleton

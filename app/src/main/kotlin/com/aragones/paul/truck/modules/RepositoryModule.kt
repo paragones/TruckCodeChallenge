@@ -1,8 +1,8 @@
 package com.aragones.paul.truck.modules
 
-import com.aragones.paul.truck.repositories.TruckRepository
-import com.aragones.paul.truck.repositories.TruckRepositoryImpl
-import com.aragones.paul.truck.rest.TruckRest
+import com.aragones.paul.truck.repositories.CarRepository
+import com.aragones.paul.truck.repositories.CarRepositoryImpl
+import com.aragones.paul.truck.rest.CarRest
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -12,5 +12,5 @@ class RepositoryModule {
 
     @Provides
     @Singleton
-    fun providesTruckRepository(rest: TruckRest): TruckRepository = TruckRepositoryImpl(rest)
+    fun providesTruckRepository(rest: CarRest): CarRepository = CarRepositoryImpl(rest)
 }

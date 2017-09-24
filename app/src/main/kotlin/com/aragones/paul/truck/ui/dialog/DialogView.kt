@@ -1,8 +1,9 @@
 package com.aragones.paul.truck.ui.dialog
 
 interface DialogView {
-    fun displayManufacturers(data: Map<String, String>)
+    fun displayCarResponse(data: Map<String, String>)
     fun displayError()
     fun displayLoading()
     fun hideLoading()
+    fun displaySummary()
 }

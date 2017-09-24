@@ -91,4 +91,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     provided 'javax.annotation:javax.annotation-api:1.2'
+    testCompile rootProject.ext.junit
+    testCompile rootProject.ext.mockito
+    testCompile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
 }
